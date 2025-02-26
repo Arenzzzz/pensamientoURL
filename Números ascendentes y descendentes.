@@ -1,0 +1,66 @@
+n = int(input("INGRESE UN NÚMERO DE 5 DÍGITOS: "))
+print()
+
+d1 = n//10000
+d2 = n%10000//1000
+d3 = n%1000//100
+d4 = n%100//10
+d5 = n%10
+
+if d1>0 and d1<10:
+    if d1 <= d2 and d1 <= d3 and d1 <= d4 and d1 <= d5:
+        a = d1
+        if d2 <= d3 and d2 <= d4 and d2 <= d5:
+            b = d2
+            if d3 <= d4 and d3 <= d5:
+                c = d3
+                if d4 <= d5:
+                    d = d4
+                    e = d5
+                else:
+                    d = d5
+                    e = d4
+            else:
+                if d4 <= d3 and d4 <= d5:
+                    b = d4
+                    if d3 <= d5:
+                        d = d3
+                        e = d5
+                    else:
+                        d = d5
+                        e = d3
+                else:
+                    c = d5
+                    d = d4
+                    e = d3
+    
+    if d1 >= d2 and d1 >= d3 and d1 >= d4 and d1 >= d5:
+        a = d1
+        if d2 >= d3 and d2 >= d4 and d2 >= d5:
+            b = d2
+            if d3 >= d4 and d3 >= d5:
+                c = d3
+                if d4 >= d5:
+                    d = d4
+                    e = d5
+                else:
+                    d = d5
+                    e = d4
+            else:
+                if d4 >= d3 and d4 >= d5:
+                    c = d4
+                    if d3 >= d5:
+                        d = d3
+                        e = d5
+                    else:
+                        d = d5
+                        e = d3
+                else:
+                    c = d5
+                    d = d4
+                    e = d3
+else:
+    print("EL NÚMERO ES INVÁLIDO (NO ES DE 5 DÍGITOS")
+    
+print(f"ascendente {e}, {d}, {c}, {b}, {a}")
+print(f"descendente {a}, {b}, {c}, {d}, {e}")
