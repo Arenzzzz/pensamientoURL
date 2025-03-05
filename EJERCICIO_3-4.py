@@ -50,3 +50,23 @@ c = ' '.join(b)
 
 print(c)
 
+#EJERCICIO 6
+POEMA_AMOR = "Te amo como se aman ciertas cosas oscuras, secretamente, entre la sombra y el alma."
+CANTO_ALEGRE = "Buenos días, alegría (Buenos días, Señor Sol) Buenos días al amor (Bueno días ah ah) Buenos días a la vida (Buenos días, Señor Sol) Buenos días, Señor Sol (Bueno días ah ah) Yo seguiré tratando ser mejor Yo seguiré tratando ser mejor"
+POEMA_TRISTE = "Se desprendió mi sangre para formar tu cuerpo. Se repartió mi alma para formar tu alma. Y fueron nueve lunas y fue toda una angustia de días sin reposo y noches desveladas."
+DATO_INTERESANTE = "La tripofobia es el miedo a los agujeros muy juntos. O más específicamente, una aversión a la vista de patrones irregulares o grupos de pequeños agujeros o protuberancias."
+
+texto = str(input("¿De qué quiere hablar hoy?: "))
+print()
+
+a = texto.split()
+
+if ("amor" in a):
+    print(POEMA_AMOR)
+elif ("alegre" in a):
+    print(CANTO_ALEGRE)
+elif("triste" in a):
+    print(POEMA_TRISTE)
+elif("interesante" in a):
+    print(DATO_INTERESANTE)
+
