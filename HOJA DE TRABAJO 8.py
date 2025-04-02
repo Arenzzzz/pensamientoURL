@@ -35,19 +35,22 @@ print("5. Excelente")
 print("4. Muy buena")
 print("3. Buena")
 print("2. Regular")
-print("1. Malo")
+print("1. Malo\n")
 
 e = 0
 m = 0
 b = 0
 r = 0
 ma = 0
-encuesta = []
+encuesta = []   #ARRAY PARA GUARDAR RESPUESTAS
+prom = []   #ARRAR PARA ALMACENAR LOS VALORES MENORES AL PROMEDIO
+sumatoria = 0   
 
 
 for i in range(0,n):
     x = int(input("¿Cuál es tu calificación?: "))
     encuesta.append(str(x))
+    sumatoria += x
     
     if x == 5:
         e += 1
@@ -59,12 +62,22 @@ for i in range(0,n):
         r += 1
     elif x == 1:
         ma += 1
-        
+
+promedio = sumatoria/n  #CALCULAR EL PROMEDIO
+moda = max(encuesta, key=encuesta.count)    #CALCULAR LA MODA O RESPUESTAS MÁS FRECUENTES
+
 print(f"\nEXCELENTE: {e}")
 print(f"MUY BUENO: {m}")
 print(f"BUENO: {b}")
 print(f"REGULAR: {r}")
-print(f"MUY MALO: {ma}")
-#print(f"\nENCUESTA: {encuesta}")
-moda = max(encuesta, key=encuesta.count)
-print(f"MODA: {moda} = {dic_encuesta[int(moda)]}")
+print(f"MUY MALO: {ma}");
+
+print(f"\nMODA: {moda} = {dic_encuesta[int(moda)]}")
+print(f"PROMEDIO: {promedio}")
+#BUSCAR LOS VALORES MENORES AL PROMEDIO EN EL ARRAY "ENCUESTA Y" GUARDARLOS EN EL ARRAY "PROM"
+for i in encuesta:
+    i = int(i)
+    if i < promedio:
+        prom.append(i)
+#SACAR EL PORCENTAJE DE VALORES MENORES AL PROMEDIO
+print(f"El porcentaje debajo del promedio es: {len(prom)*100/n}%")
