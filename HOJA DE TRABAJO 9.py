@@ -31,7 +31,7 @@ cuenta_regresiva(10)
 print("CUENTA ASCENDENTE");print()
 
 def cuenta_ascendente(n):
-    if n > 0:
+    if(n > 0):
         cuenta_ascendente(n - 1)
         print(n)
 cuenta_ascendente(10)
