@@ -1,0 +1,43 @@
+#EJERCICIO 2
+print("PERSONAS EN UNA INSTITUCIÓN")
+
+class Persona():
+    def __init__(self, nombre, edad, DNI):
+        self.nombre = nombre
+        self.edad = edad
+        self.DNI = DNI
+    def info(self):
+        print(f"Nombre: {self.nombre}, Edad: {self.edad}, DNI: {self.DNI}")
+    
+class Estudiante(Persona):
+    def __init__(self, nombre, edad, DNI, carrera):
+        super().__init__(nombre, edad, DNI)
+        self.carrera = carrera
+        
+    def info(self):
+        print(f"{super().info()}, Carrera: {self.carrera}")
+        
+class Profesor(Persona):
+    def __init__(self, nombre, edad, DNI, curso):
+        super().__init__(nombre, edad, DNI)
+        self.curso = curso
+        
+    def info(self):
+        print(f"{super().info()}, Curso: {self.curso}")
+    
+class Admin(Persona):
+    def __init__(self, nombre, edad, DNI, facultad):
+        super().__init__(nombre, edad, DNI)
+        self.facultad = facultad
+        
+    def info(self):
+        print(f"{super().info()}, Facultad: {self.facultad}")
+    
+P1 = Estudiante("Juan", 18, 123, "Informática")
+P1.info();print()
+
+P2 = Profesor("Pedro", 25, 345, "Precálculo")
+P2.info();print()
+
+P3 = Admin("Luis", 40, 101, "Ingeniería")
+P3.info()
