@@ -1,9 +1,9 @@
-from abc import ABC, abstractmethod
+#EJERCICIO 1
+print("SIMULACIÓN DE EXPERIMENTOS DE CAÍDA LIBRE");print()
 import math
 
 # Clase abstracta
-class ExperimentoFisico(ABC):
-    @abstractmethod
+class ExperimentoFisico():
     def realizar_experimento(self):
         pass
 
@@ -23,9 +23,13 @@ class CaidaLibre(ExperimentoFisico):
         return tiempo
 
 # Ejemplo de uso
+
+h = float(input("Ingrese altura: "))
+g = float(input("Ingrese gravedad: "))
+
 try:
-    experimento = CaidaLibre(altura=20, gravedad=9.81)
+    experimento = CaidaLibre(h, g)
     tiempo_caida = experimento.realizar_experimento()
     print(f"Tiempo de caída: {tiempo_caida:.2f} segundos")
 except ValueError as e:
-    print("Error en el experimento:", e)
+    print("ERROR EN EL EXPERIMENTO:", e)
